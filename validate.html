@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script>
+        function validate()
+        {
+            uname =document.getElementById("username").value
+            pass = document.getElementById("password").value
+
+            if(uname==" ")
+            {
+                document.getElementById("unamerror").innerHTML="please enter username"
+                //alert("Please enter username ")
+                return
+            }
+            if(pass==" ")
+            {
+                document.getElementById("passerror").innerHTML="please enter password"
+                return
+            }
+            document.getElementById("myform").submit()
+        }
+    </script>
+</head>
+<body>
+    <form action="/dummy" id="myform" style="font-size: 35px;">
+        <label>Enter Username : <input type="text" id="username" style="font-size: 35px;" onblur="validate()"></label>
+        <span id="unamerror"></span><br><br>
+
+        <label>Password: <input type="password" style="font-size: 35px;" id="password"></label>
+        <span id="passerror"></span><br><br>
+
+        <input type="button"  style="font-size: 35px;" onclick="validate()" value="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Factorial </title>
+    <style>
+        #form-fact
+        {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 5%;
+            background-color: rgb(168, 198, 116);
+            padding: 60px;
+            margin-left: 20%;
+            margin-right: 20%;
+           
+            
+        }
+        #form-fact h1{
+            font-size: 100px;
+        }
+        .frm
+        {
+            font-size: 80px;
+        }
+        button
+        {
+            text-align: center;
+            color: rgb(72, 11, 11);
+            padding: 15px;
+            background-color: cadetblue;
+        }
+        #fact
+        {
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function calculateFactorial()
+        {
+            number = parseInt(document.getElementById("fact").value);
+            factorial =1;
+
+            //input is valid or not
+            if(isNaN(number))
+            {
+                alert("Please Enter Valid Number !");
+                return;
+            }
+            //find factorial
+            for(i=1;i <= number; i++)
+            {
+                factorial *= i;
+            }
+
+            //display output in alert box
+            alert(" Factorial of " + number + " is " + factorial);
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="form-fact">
+        <h1><i>--------------Factorial Calculator-------------</i></h1><br>
+        <label for="number" class="frm">Enter a number: </label>
+        <input type="text" id="fact" class="frm"><br><br>
+        <button class="frm" onclick="calculateFactorial()">Calculate Factorial</button>
+    </div>
+   
+</body>
+</html>
