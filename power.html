@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Power</title>
+    <style>
+        #power-form
+        {
+            font-size: 60px;
+            text-align: center;
+            margin-top: 5%;
+            background-color: rgb(62, 177, 152);
+            padding: 100px;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        .pow
+        {
+            font-size: 80px;
+        }
+        #power-form button
+        {
+            padding: 20px;
+            border-radius: 20px;
+            background-color: rgb(159, 207, 86);
+        }
+        .inp
+        {
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function calculatePower() 
+        {
+            var base = parseFloat(document.getElementById("base").value);
+            var exponent = parseInt(document.getElementById("exponent").value);
+
+            //  if the inputs are valid numbers or not
+            if (isNaN(base) || isNaN(exponent)) 
+            {
+                alert("Please enter valid numbers for base and exponent!");
+                return;
+            }
+
+            // Calculate power
+            var result = Math.pow(base, exponent);
+            // Math.pow(base,exponent) is built in function in js to find power
+
+
+
+            // Display the result in an alert box
+            alert(base + " Raised To The Power Of " + exponent + " Is " + result);
+        }
+    </script>
+</head>
+<body>
+    <div id="power-form">
+        <h2><i>||*-*-*-*-*-*-*-Power Calculator-*-*-*-*-*-*-*||</i></h2>
+        <form>
+            <label for="base" class="pow"> Enter The Base:</label>
+            <input type="text" class="pow" class="inp" id="base">
+            <br><br>
+            <label for="exponent" class="pow" > Enter The Exponent:</label>
+            <input type="text" class="pow" class="inp"  id="exponent">
+            <br><br>
+            <button type="button" class="pow" onclick="calculatePower()">Calculate Power</button>
+        </form>
+    </div>
+</body>
+</html>

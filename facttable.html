@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Table</title>
+    <style>
+        #tab
+        {
+            margin-top: 45px;
+            margin-left: 20%;
+            font-size: 60px;
+            background-image: linear-gradient(to right,rgb(176, 215, 176),yellow);
+            margin-right: 20%;
+            padding: 50px;
+        }
+        .inp
+        {
+            font-size: 80px;
+
+        }
+        #number
+        {
+            padding: 20px;
+        }
+        #tbl
+        {
+            padding: 20px;
+        }
+       
+    </style>
+    <script>
+        function generateFactorialTable()
+        {
+            var number = parseInt(document.getElementById("number").value);
+            var factorialTable = "<h2>Factorial Table</h2><table><tr> <th> Number </th> <th> Factorial </th></tr>";
+            
+                //input is valid or not
+            if(isNaN(number))
+            {
+                alert("Please Enter Valid Number !");
+                return;
+            }
+            // Calculate factorial for numbers from 1 to the given number
+            for (var i = 1; i <= number; i++)
+            {
+                var factorial = 1;
+                for (var j = 1; j <= i; j++) 
+                {
+                    factorial *= j;
+                }
+                factorialTable += " <tr> <td> " +  i + " </td> <td> "  + factorial + "</td> </tr>";
+            }
+            factorialTable += "</table>";
+    
+            // Display the factorial table
+            document.getElementById("factorialTable").innerHTML = factorialTable;
+        }
+    </script>
+</head>
+<body>
+    <div id="tab">
+        <h1 style="text-align: center;"><i>*********Factorial Table Generator*********</i></h1><br>
+        <label for="number" class="inp">Enter a number:</label>
+        <input type="text" class="inp" id="number">
+        <button class="inp" id="tbl" onclick="generateFactorialTable()">Factorial Table</button>
+        <div id="factorialTable" class="inp"></div>
+    </div>
+</body>
+</html>
